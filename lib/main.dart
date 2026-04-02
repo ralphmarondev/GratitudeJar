@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gratitude_jar/hello_screen.dart';
+import 'package:gratitude_jar/screens/login_screen.dart';
 
 void main() {
   runApp(const GratitudeJarApp());
@@ -15,7 +15,7 @@ class GratitudeJarApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HelloScreen(),
+      home: const LoginScreen(),
     );
   }
 }
