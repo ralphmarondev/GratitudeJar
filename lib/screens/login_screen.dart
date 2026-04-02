@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gratitude_jar/screens/home_screen.dart';
 
@@ -14,31 +15,36 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   bool isLoading = false;
 
-  void login() {
+  void login() async {
     if (!_formKey.currentState!.validate()) return;
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
 
     setState(() => isLoading = true);
-
-    Future.delayed(const Duration(seconds: 1), () {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
       if (!mounted) return;
 
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
+      );
+    } on FirebaseAuthException catch (e) {
+      if (!mounted) return;
+      String message = 'Login failed';
+      if (e.code == 'user-not-found') message = 'No user found for that email.';
+      if (e.code == 'wrong-password') message = 'Incorrect password.';
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(message)));
+    } finally {
       setState(() {
         isLoading = false;
       });
-
-      if (email == 'ralphmaron@gmail.com' && password == 'issocute123') {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (_) => const HomeScreen()),
-        );
-      } else {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text('Invalid credentials.')));
-      }
-    });
+    }
   }
 
   @override

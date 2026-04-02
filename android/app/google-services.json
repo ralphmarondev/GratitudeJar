@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "723617078421",
+    "project_id": "gratitude-jar-2026",
+    "storage_bucket": "gratitude-jar-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723617078421:android:60bd19b6409d00636e4f9c",
+        "android_client_info": {
+          "package_name": "com.ralphmarondev.gratitude_jar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcCoNgI16lU_by56qbRKLoIhI-DVYkn44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1",
+  "note": "Hey! Ralph Maron Eda added this intentionally to version control 😎💜",
+  "fun_fact": "I'm cute lolz 😏",
+  "developer_signature": "Gratitude Jar made by Ralph Maron Eda",
+  "reminder": "Always hydrate and smile 😊",
+  "todo": [
+    "Add Firebase Auth",
+    "Implement Firestore",
+    "Make this app super cute! 💜"
+  ]
+}
