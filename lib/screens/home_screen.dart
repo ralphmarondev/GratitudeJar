@@ -48,11 +48,22 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: const Center(
-        child: Text(
-          'Hello there, Ralph Maron Eda is here!',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-          textAlign: TextAlign.center,
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/ralphmaron.jpg',
+              width: 150,
+              height: 150,
+              fit: BoxFit.cover
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Ralph Maron Eda',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
       ),
     );
