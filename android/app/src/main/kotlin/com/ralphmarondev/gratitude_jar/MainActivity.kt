@@ -1,4 +1,4 @@
-package com.example.gratitude_jar
+package com.ralphmarondev.gratitude_jar
 
 import io.flutter.embedding.android.FlutterActivity
 
