@@ -52,16 +52,39 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(
-              'assets/images/ralphmaron.jpg',
+            Container(
               width: 150,
               height: 150,
-              fit: BoxFit.cover
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset(
+                  'assets/images/ralphmaron.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
             const SizedBox(height: 16),
             const Text(
               'Ralph Maron Eda',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.normal),
+            ),
+            const Text(
+              'Computer Engineer',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.normal,
+                color: Color.fromARGB(255, 112, 94, 109),
+              ),
             ),
           ],
         ),
