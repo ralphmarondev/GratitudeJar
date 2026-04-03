@@ -14,9 +14,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_21.toString()
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
+        }
     }
 
     defaultConfig {
@@ -24,7 +25,7 @@ android {
         minSdk = 28
         targetSdk = 36
         versionCode = 1
-        versionName = '1.0'
+        versionName = "1.0"
     }
 
     buildTypes {
